@@ -14,18 +14,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { NavigationComponent } from './component/navigation/navigation.component';
-import { LoginComponent } from './component/login/login.component';
-import { SignupComponent } from './component/signup/signup.component';
-import { HomeComponent } from './component/home/home.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { HomeComponent } from './components/home/home.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
-import { BookingComponent } from './component/booking/booking.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 
 import { FormsModule} from '@angular/forms';
+import { CreateBookingComponent } from './components/create-booking/create-booking.component';
+
 
 
 
@@ -37,6 +39,8 @@ import { FormsModule} from '@angular/forms';
     SignupComponent,
     HomeComponent,
     BookingComponent,
+    CreateBookingComponent,
+   
    
     
   ],

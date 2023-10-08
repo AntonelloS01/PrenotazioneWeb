@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/auth');
 
+const bookingRoutes= require('./routes/bookings');
+
 const errorController = require('./controllers/error');
 
 const app = express();
@@ -30,7 +32,7 @@ app.use((req, res, next) => {
 
 app.use('/auth', authRoutes);
 
-
+app.use('/booking', bookingRoutes);
 
 app.use(errorController.get404);
 
