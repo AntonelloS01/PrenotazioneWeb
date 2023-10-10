@@ -4,8 +4,9 @@ const Booking = require('../models/booking');
 
 exports.fetchAll = async (req, res, next) => {
   try {
-    const [allBookings] = await Booking.fetchAll();
-    res.status(200).json(allBookings);
+    const userId = req.userId; 
+    const [userBookings] = await Booking.fetchAll(userId);
+    res.status(200).json(userBookings);
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
@@ -13,7 +14,6 @@ exports.fetchAll = async (req, res, next) => {
     next(err);
   }
 };
-
 exports.postBooking= async (req, res, next) => {
   const errors = validationResult(req);
 
@@ -21,12 +21,14 @@ exports.postBooking= async (req, res, next) => {
 
   const date = req.body.date;
   const number = req.body.number;
+  const time = req.body.time;
   const user = req.body.user;
 
   try {
     const booking = {
       date: date,
       number: number,
+      time: time,
       user: user,
     };
     const result = await Booking.save(booking);
