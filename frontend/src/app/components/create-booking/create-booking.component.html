@@ -1,0 +1,33 @@
+
+
+<div class="booking-container">
+    <button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+      <i class='bx bxs-book-add'></i> prenota
+    </button>
+    <form
+      *ngIf="isOpen"
+      [formGroup]="form"
+      #formDirective="ngForm"
+      (ngSubmit)="onSubmit(form.value)"
+      novalidate
+    >
+      <mat-form-field>
+        <mat-label>Data</mat-label>
+        <input matInput type="date" formControlName="date" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Numero</mat-label>
+        <input matInput type="number" formControlName="number" required min="1" max="15" />
+      </mat-form-field>
+     
+    
+      <button
+        color="accent"
+        [disabled]="!form.valid"
+        mat-raised-button
+        type="submit"
+      >
+        <span>Invia</span>
+      </button>
+    </form>
+    </div>

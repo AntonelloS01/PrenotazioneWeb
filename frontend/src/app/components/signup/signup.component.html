@@ -1,0 +1,39 @@
+<div class="body">
+    <div class="wrapper">
+
+       
+
+        <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+
+             <h1>Register</h1>
+
+            <div  class="input-box">
+                <mat-form-field>
+                    <mat-label>First name</mat-label>
+                    <input matInput placeholder="Ex. Marco" formControlName="name">
+                    <i class='bx bxs-user' style='color:rgba(0,0,0,0.62)' ></i>
+                </mat-form-field>
+            </div>
+
+            <div  class="input-box">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                    <i class='bx bxs-envelope' style='color:rgba(0,0,0,0.62)'  ></i>
+                </mat-form-field>
+             </div> 
+
+             <div  class="input-box">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <i class='bx bxs-lock-alt' style='color:rgba(0,0,0,0.62)' ></i>
+                </mat-form-field>
+             </div>
+
+        <button class="btn" [disabled]="!signupForm.valid" mat-raised-button type ="submit">
+            <span>Sign up</span>
+        </button>
+        </form>
+    </div>
+</div>
