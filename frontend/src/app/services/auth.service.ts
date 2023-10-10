@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from '@angular/router';
-
-
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first,catchError, tap } from "rxjs/operators";
-
-
 import { User } from '../models/User';
 import { ErrorHandlerService } from './error-handler.service';
 

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Booking } from 'src/app/models/Booking';
-
 import { Observable } from "rxjs";
-
 import { PostService} from "src/app/services/post.service";
 import { AuthService } from "src/app/services/auth.service";
-
 import { User } from "src/app/models/User";
 
 @Component({

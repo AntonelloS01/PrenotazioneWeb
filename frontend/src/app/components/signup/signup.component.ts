@@ -3,7 +3,6 @@ import{FormControl, FormGroup, Validators} from "@angular/forms";
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from "@angular/router";
 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -13,8 +12,6 @@ import { Router } from "@angular/router";
 export class SignupComponent implements OnInit {
   
   signupForm!: FormGroup;
-
-
 
   constructor(private authService: AuthService, private router: Router){  }
 

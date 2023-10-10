@@ -31,7 +31,6 @@ export class PostService {
       );
   }
 
-
   getBookingServiceUrl(): string {
     return "http://localhost:3000/booking"; // Sostituisci con l'URL effettivo
   }

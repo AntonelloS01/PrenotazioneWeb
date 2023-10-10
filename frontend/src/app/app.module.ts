@@ -40,9 +40,7 @@ import { CreateBookingComponent } from './components/create-booking/create-booki
     HomeComponent,
     BookingComponent,
     CreateBookingComponent,
-   
-   
-    
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +58,6 @@ import { CreateBookingComponent } from './components/create-booking/create-booki
     FormsModule,
     MatNativeDateModule,
     
-
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
