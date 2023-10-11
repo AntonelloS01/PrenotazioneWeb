@@ -2,13 +2,18 @@
 <app-create-booking (create)="createBooking()"></app-create-booking>
 
 <mat-card *ngFor="let booking of bookings$ | async" class="mat-card-container">
-  <button mat-icon-button class="delete-button" (click)="delete(booking.id)">
-    <mat-icon color="warn">delete</mat-icon>
-  </button>
-  <div class="booking-date">
-    {{ booking.date }}
-  </div>
-  <div class="booking-number">
-    {{ booking.number }}
+  <div class="booking-info">
+    <button mat-icon-button class="delete-button" (click)="delete(booking.id)">
+      <mat-icon color="warn">delete</mat-icon>
+    </button>
+    <div class="booking-date">
+      Prenotato per il giorno {{ booking.date | date:'dd/MM/yyyy'}}
+    </div>
+    <div class="booking-time">
+      alle {{ booking.time }}
+    </div>
+    <div class="booking-number">
+      per {{ booking.number }} persone.
+    </div>
   </div>
 </mat-card>

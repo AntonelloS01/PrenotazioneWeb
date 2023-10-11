@@ -20,13 +20,15 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { BookingComponent } from './components/booking/booking.component';
-
+import { CreateBookingComponent } from './components/create-booking/create-booking.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BookingStatusDialogComponent } from './components/booking-status-dialog/booking-status-dialog.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 import { FormsModule} from '@angular/forms';
-import { CreateBookingComponent } from './components/create-booking/create-booking.component';
 
 
 
@@ -40,7 +42,9 @@ import { CreateBookingComponent } from './components/create-booking/create-booki
     HomeComponent,
     BookingComponent,
     CreateBookingComponent,
-
+    BookingStatusDialogComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,8 @@ import { CreateBookingComponent } from './components/create-booking/create-booki
     MatDatepickerModule,
     FormsModule,
     MatNativeDateModule,
+    MatDialogModule,
+    MatButtonToggleModule,
     
   ],
   providers: [{
