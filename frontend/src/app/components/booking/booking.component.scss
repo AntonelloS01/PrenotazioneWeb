@@ -1,14 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(24, 23, 23, 0.119); 
+  min-height: 100vh;
+  padding: 20px;
+}
+
 mat-card {
-    margin-bottom: 1em;
-    font-size: 24px;
-    button {
-      float: right;
-    }
-    .booking-number {
-      font-weight: bold;
-    }
-    .booking-date {
-      font-size: 16px;
-      font-style: italic;
-    }
-  }
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(24, 23, 23, 0.119); 
+  backdrop-filter: blur(10px); 
+}
+
+.mat-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: rgba(24, 23, 23, 0.119); 
+  color: #272525;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(5px); 
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-details {
+  font-size: 16px;
+}
+
+strong {
+  font-weight: bold;
+}

@@ -29,6 +29,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 import { FormsModule} from '@angular/forms';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -43,6 +44,7 @@ import { FormsModule} from '@angular/forms';
     BookingComponent,
     CreateBookingComponent,
     BookingStatusDialogComponent,
+    AboutUsComponent,
    
     
   ],

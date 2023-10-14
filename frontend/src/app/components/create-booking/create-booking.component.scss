@@ -1,45 +1,48 @@
 .booking-container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .booking-button {
-    background-color: #1976D2; 
-    color: white; 
-    border: none; 
-    transition: background-color 0.3s ease;
-  }
+  text-align: center;
+  margin: 20px;
+}
 
-  .booking-button i {
-    margin-right: 8px; 
-  }
-  
-  .booking-button:hover {
-    background-color: #135CAE; 
-  }
-  
-  .booking-form {
-    display: none; 
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #f7f7f7;
-    margin-top: 20px;
-    border-radius: 4px;
-    text-align: center;
-  }
-  
-  .form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
- 
-  .submit-button {
-    background-color: #1976D2; 
-    color: white; 
-    border: none; 
-    transition: background-color 0.3s ease; 
-  }
-  
-  .submit-button:hover {
-    background-color: #135CAE; 
-  }
+
+.booking-button {
+  background-color: #1976D2; 
+  color: white; 
+  border: none; 
+  transition: background-color 0.3s ease; 
+}
+
+.booking-button i {
+  margin-right: 8px; 
+}
+
+.booking-button:hover {
+  background-color: #135CAE; }
+
+
+.booking-form {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+.submit-button {
+  background-color: #1976D2; 
+  color: white; 
+  border: none; 
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #135CAE; 
+}

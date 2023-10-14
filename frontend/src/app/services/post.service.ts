@@ -44,9 +44,6 @@ export class PostService {
     return "http://localhost:3000/booking"; // Sostituisci con l'URL effettivo
   }
 
-
-
-
   createBooking(
     formData: Partial<Booking>,
     userId: Pick<User, "id">
@@ -69,9 +66,7 @@ export class PostService {
             console.error('Errore nella chiamata API:', error);
             return throwError('Errore durante la creazione della prenotazione');
           }),
-          tap(() => {
-            // Mostra la modale di conferma solo dopo che la chiamata ha avuto successo
-            this.showBookingConfirmationModal();
+          tap(() => { this.showBookingConfirmationModal();
             this.router.navigate(['/home']);
           })
         );

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, Output,EventEmitter, } from '@angular/core';
 import { FormControl, FormGroup, Validators,NgForm } from "@angular/forms";
-
 import { first } from "rxjs/operators";
 import { Booking } from "src/app/models/Booking";
 import { AuthService } from "src/app/services/auth.service";
@@ -41,59 +40,66 @@ export class CreateBookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.createFormGroup();
-
-    
   }
 
   createFormGroup(): FormGroup {
     return new FormGroup({
-      date: new FormControl(new Date(), [Validators.required]),
+      date: new FormControl(null, [Validators.required, this.dateValidator]),
       number: new FormControl(1, [Validators.required, Validators.min(1), Validators.max(15)]),
       time: new FormControl('', [Validators.required]),
     });
   }
 
- 
+  dateValidator(control: FormControl): { [key: string]: any } | null {
+    const value = control.value;
+
+    if (value === null || value === undefined) {
+      return null;  }
+
+    if (isNaN(new Date(value).getTime())) {
+      return { 'invalidDate': true };
+    }
+
+    return null; // Data valida
+  }
+
   toggleForm() {
     this.isOpen = !this.isOpen;
     if (!this.isOpen) {
       this.form.reset();
       this.formDirective.resetForm();
-     
     }
   }
- 
-  onSubmit(formData: Pick<Booking, "date" |"number"|"time">): void {
+
+  onSubmit(formData: Pick<Booking, "date" | "number" | "time">): void {
     const selectedDate = formData.date;
-  
+      if (this.form.get('date')?.hasError('invalidDate')) {
+      console.log('Data non valida');
+      return;
+    }
+
     const formattedDate = new Date(
       selectedDate.getFullYear(),
       selectedDate.getMonth(),
       selectedDate.getDate()
     );
-  
-    // Crea un oggetto con la data formattata
-    const formattedFormData: Pick<Booking, "date" |"number"|"time"> = {
+
+    const formattedFormData: Pick<Booking, "date" | "number" | "time"> = {
       date: formattedDate,
       number: formData.number,
       time: formData.time
     };
-  
-   
+
     formData = formattedFormData;
     this.postService
       .createBooking(formData, this.authService.userId)
       .pipe(first())
       .subscribe(() => {
         this.create.emit(null);
-  
-        console.log('passa');
-      
-
-        this.toggleForm() ;
+        console.log('Passa');
+        this.toggleForm();
         this.form.reset();
         this.formDirective.resetForm();
       });
   }
-  
 }

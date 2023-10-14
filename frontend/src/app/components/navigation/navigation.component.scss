@@ -1,15 +1,43 @@
-mat-toolbar{
+.mat-toolbar {
     display: flex;
     justify-content: space-between;
-    padding: 0 64px;
+    padding: 0 140px; 
+    background-color: #d71605;
+    height: 100px;
     a {
-        text-decoration: none;
-         &.active-link {
+      text-decoration: none;
+      &.active-link {
         color: white;
-        }
-        span {
-            margin-left: 24px;
-            
-        }
+      }
+      span {
+        margin-left: 60px; 
+        font-size: 25px;
+      }
     }
-}
+    .logo {
+      width: 100px; 
+      height: 100px; 
+      margin: 10px;
+      border-radius: 50%; 
+    }
+  }
+  
+   @media (max-width: 600px) {
+    .mat-toolbar {
+      padding: 0 20px; 
+      height: 75px; 
+      a {
+        span {
+          margin-left: 20px; 
+          font-size: 20px; 
+        }
+      }
+      .logo {
+        width: 80px; 
+        height: 80px; 
+        margin: 5px;
+        border-radius: 50%; 
+      }
+    }
+  }
+  
