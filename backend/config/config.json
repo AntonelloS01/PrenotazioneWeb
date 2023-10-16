@@ -1,6 +1,6 @@
 {
     "host": "localhost",
     "user": "root",
-    "database": "posts",   
+    "database": "bookings",   
     "password": "Esameweb2023+" 
   }
